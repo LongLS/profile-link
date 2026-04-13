@@ -1,0 +1,183 @@
+:root {
+    --bg-color: #ffffff;
+    --text-main: #111827;
+    --text-muted: #6B7280;
+    --text-light: #9CA3AF;
+    --card-bg: #F4F5F6;
+    --card-highlight-bg: #EFF6FF;
+    --card-highlight-border: #3B82F6;
+    --social-bg-hover: #F9FAFB;
+    --border-color: #E5E7EB;
+    
+    --transition: all 0.2s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Profile Header */
+.avatar-container {
+    margin-bottom: 24px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.handle {
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 32px;
+    color: #000;
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    background-color: var(--social-bg-hover);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.social-icon.yt { border-color: #FCA5A5; color: #EF4444; }
+.social-icon.yt:hover { border-color: #EF4444; }
+
+.social-icon.ig { border-color: #F9A8D4; }
+.social-icon.ig:hover { border-color: #E1306C; }
+
+.social-icon.fb { border-color: #93C5FD; color: #3B82F6; }
+.social-icon.fb:hover { border-color: #3B82F6; }
+
+.social-icon.tt { border-color: #D1D5DB; color: #111827; }
+.social-icon.tt:hover { border-color: #111827; }
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* General Links Section */
+.links-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    margin-top: 8px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: var(--transition);
+    position: relative;
+}
+
+.link-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.link-card .icon-left {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+}
+
+.link-card .text {
+    font-weight: 600;
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+.link-card .icon-right {
+    color: #D1D5DB; /* light gray arrow */
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+}
+
+/* Highlighted Link Card */
+.link-card.highlight {
+    background-color: var(--card-highlight-bg);
+    border-color: var(--card-highlight-border);
+}
+
+.link-card.highlight .icon-left {
+    color: var(--card-highlight-border);
+}
+
+/* Micro animation for arrow on hover */
+.link-card:hover .icon-right {
+    transform: translateX(4px);
+    color: var(--text-light);
+    transition: transform 0.2s ease;
+}
