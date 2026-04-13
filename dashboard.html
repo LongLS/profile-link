@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
         .dashboard-container {
@@ -70,13 +72,68 @@
         tbody tr:hover {
             background-color: var(--social-bg-hover);
         }
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .filter-group {
+            display: flex;
+            gap: 4px;
+            background: #F3F4F6;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        .filter-btn {
+            border: none;
+            background: transparent;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .filter-btn:hover { background: #E5E7EB; }
+        .filter-btn.active {
+            background: white;
+            color: var(--text-main);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .chart-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+            height: 300px;
+        }
     </style>
 </head>
 <body>
     <div class="dashboard-container">
-        <h1 class="title" style="margin-bottom: 8px;">Analytics 📊</h1>
-        <p class="handle" style="margin-bottom: 32px;">Bảng điều khiển giám sát thời gian thực</p>
+        <div class="header-actions">
+            <div>
+                <h1 class="title" style="margin-bottom: 8px;">Analytics 📊</h1>
+                <p class="handle" style="margin-bottom: 0;">Bảng điều khiển giám sát thời gian thực</p>
+            </div>
+            <div class="filter-group">
+                <button class="filter-btn" data-time="day">Hôm nay</button>
+                <button class="filter-btn" data-time="week">Tuần này</button>
+                <button class="filter-btn" data-time="month">Tháng này</button>
+                <button class="filter-btn active" data-time="all">Tất cả</button>
+            </div>
+        </div>
         
+        <div class="chart-wrapper">
+            <canvas id="trafficChart"></canvas>
+        </div>
+
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="value" id="totalViews">--</div>
