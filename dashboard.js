@@ -3,7 +3,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 // ==========================================
 // CẤU HÌNH SUPABASE TẠI ĐÂY
 // Bước 1: Hãy điền cái URL bạn được Supabase cấp vào đây:
-const supabaseUrl = 'YOUR_SUPABASE_PROJECT_URL_HERE'; // Ví dụ: 'https://xyzabcdef.supabase.co'
+const supabaseUrl = 'https://yygbjslykejlceqhxxlo.supabase.co'; // Ví dụ: 'https://xyzabcdef.supabase.co'
 
 // Bước 2: Key Public mà bạn vửa gửi
 const supabaseKey = 'sb_publishable_6gGnoexZUHVxEwM7pW3zug_rYNPl3EH'; 

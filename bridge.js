@@ -1,7 +1,7 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
 // Cấu hình Supabase (Bạn BẮT BUỘC phải thay [YOUR_PROJECT_URL] bằng URL project của bạn, vd: https://xyz.supabase.co)
-const supabaseUrl = 'https://[YOUR_PROJECT_URL].supabase.co'; 
+const supabaseUrl = 'https://yygbjslykejlceqhxxlo.supabase.co'; 
 const supabaseKey = 'sb_publishable_6gGnoexZUHVxEwM7pW3zug_rYNPl3EH'; // Key của bạn
 const supabase = createClient(supabaseUrl, supabaseKey);
 
